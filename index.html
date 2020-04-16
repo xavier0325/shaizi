@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>骰子</title>
+		<link rel="stylesheet" type="text/css" href="css/new_file.css" />
+	</head>
+	<body>
+		<div id="head"><h2>点击骰子即可随机转动</h2></div>
+		<div id="line"></div>
+		<div id="to_game"><a href="https://xavier0325.github.io/Gift/">/TO MY GAME/</a></div>
+		<ul id="box">
+			<li>王</li>
+			<li>晨</li>
+			<li>阳</li>
+			<li>的</li>
+			<li>骰</li>
+			<li>子</li>
+		</ul>
+		<script>
+			window.onload = function() {
+					wrap.style.cssText = "transform: rotateX(320deg) rotateY(320deg);transition: 1s ease-out;"
+					alert("biu! make for wcy by xyf~");
+					}
+					var n=-25;
+					var wrap = document.getElementById('box');
+					var degArr = [-360+n, -270+n, -180+n, -90+n, 0+n, 90+n, 180+n, 270+n, 360+n]; //各个面对应角度
+					wrap.onclick = function() {
+						var round = 4 + Math.floor(Math.random() * 9); //旋转圈数
+						var randX = Math.floor(Math.random() * 9); //随机x
+						var randY = Math.floor(Math.random() * 9); //随机y
+						var degX = round * 360 + degArr[randX];
+						var degY = round * 360 + degArr[randY];
+						wrap.style.cssText = "transform: rotateX(" + degX + "deg) rotateY(" + degY + "deg)";
+					}
+		</script>
+
+	</body>
+</html>
